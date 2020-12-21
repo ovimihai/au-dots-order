@@ -8,6 +8,9 @@ input.onButtonPressed(Button.A, function () {
             . . . . .
             . . . . .
             `)
+        basic.pause(50)
+        basic.clearScreen()
+        basic.pause(50)
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -20,20 +23,30 @@ input.onButtonPressed(Button.B, function () {
             . . . . .
             . . . . .
             `)
+        basic.pause(50)
+        basic.clearScreen()
+        basic.pause(50)
     }
 })
 let Pass = ""
 let Start = 0
 Start = 0
 Pass = ""
-let Solution = "ABBAB"
-basic.clearScreen()
-for (let index = 0; index <= Solution.length; index++) {
-    basic.showString(Solution.charAt(index))
+let Solution = ""
+let Length = 5
+for (let index = 0; index <= Length - 1; index++) {
+    if (randint(0, 1) == 0) {
+        Solution = "" + Solution + "A"
+        basic.showString("A")
+    } else {
+        Solution = "" + Solution + "B"
+        basic.showString("B")
+    }
     basic.pause(200)
     basic.clearScreen()
-    basic.pause(100)
+    basic.pause(200)
 }
+basic.clearScreen()
 Start += 1
 basic.showLeds(`
     . # . . .
